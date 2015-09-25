@@ -22,7 +22,7 @@ RUN		apt-get update && \
 
 # download and extract jmeter 
 RUN		mkdir -p ${JMETER_HOME} && \
-		curl -L --silent ${JMETER_DOWNLOAD_URL} | unzip --strip=1 -C ${JMETER_HOME} && \
+		curl -L --silent ${JMETER_DOWNLOAD_URL} | unzip -C ${JMETER_HOME} && \
 		curl -L --silent http://jmeter-plugins.org/downloads/file/JMeterPlugins-Standard-1.2.1.zip -o /tmp/jmeter-plugins-standard.zip && \
 		unzip -o -d /opt/jmeter/ /tmp/jmeter-plugins-standard.zip && \
 		rm /tmp/jmeter-plugins-standard.zip
