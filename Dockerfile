@@ -5,6 +5,13 @@ ENV     	DEBIAN_FRONTEND noninteractive
 ENV		JMETER_VERSION	2.12
 ENV		JMETER_HOME	/opt/jmeter
 ENV		JMETER_DOWNLOAD_URL  http://mirror.serversupportforum.de/apache/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz
+ENV		NUMERO_ESECUZIONE  1
+ENV		NUMERO_THREAD  1
+ENV		DELAY_ORDINI_MIN  1
+ENV		DELAY_ORDINI_MAX  1
+ENV		TEMPO_AVVIO  1
+ENV		RUN_REGISTRAZIONE  true
+ENV		RUN_ORDINI  true
 
 # install needed debian packages & clean up
 RUN		apt-get update && \
@@ -22,6 +29,7 @@ RUN		mkdir -p ${JMETER_HOME} && \
 
 WORKDIR		${JMETER_HOME}
 
-ADD cloud-benchmark.jmx ${JMETER_HOME}/cloud-benchmark.jmx 
+ADD cloud-benchmark.jmx ${JMETER_HOME}/cloud-benchmark.jmx
+ADD registrazioneUtente.csv ${JMETER_HOME}/registrazioneUtente.csv
 
-CMD ["bin/jmeter -n -t ${JMETER_HOME}/cloud-benchmark.jmx"]
+CMD ["bin/jmeter -n -t ${JMETER_HOME}/cloud-benchmark.jmx -JdirectoryCsv=registrazioneUtente.csv -JnumeroEsecuzione=${NUMERO_ESECUZIONE} -JnumeroThread=${NUMERO_THREAD} -JtempoDiAttesaOrdiniMin=${DELAY_ORDINI_MIN} -JtempoDiAttesaOrdiniMax=${DELAY_ORDINI_MAX} -JtempoDiAvvio=${TEMPO_AVVIO} -JrunRegistrazioneUtenti=${RUN_REGISTRAZIONE} -JrunInserisciOrdine=${RUN_ORDINI}"]
