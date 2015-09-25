@@ -2,9 +2,9 @@ FROM java:8
 
 ENV     	DEBIAN_FRONTEND noninteractive
 
-ENV		JMETER_VERSION	2.12
+ENV		JMETER_VERSION	2.13
 ENV		JMETER_HOME	/opt/jmeter
-ENV		JMETER_DOWNLOAD_URL  http://mirror.serversupportforum.de/apache/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz
+ENV		JMETER_DOWNLOAD_URL  http://mirror.serversupportforum.de/apache/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.zip
 ENV		NUMERO_ESECUZIONE  1
 ENV		NUMERO_THREAD  1
 ENV		DELAY_ORDINI_MIN  1
@@ -22,7 +22,7 @@ RUN		apt-get update && \
 
 # download and extract jmeter 
 RUN		mkdir -p ${JMETER_HOME} && \
-		curl -L --silent ${JMETER_DOWNLOAD_URL} | tar -xz --strip=1 -C ${JMETER_HOME} && \
+		curl -L --silent ${JMETER_DOWNLOAD_URL} | unzip --strip=1 -C ${JMETER_HOME} && \
 		curl -L --silent http://jmeter-plugins.org/downloads/file/JMeterPlugins-Standard-1.2.1.zip -o /tmp/jmeter-plugins-standard.zip && \
 		unzip -o -d /opt/jmeter/ /tmp/jmeter-plugins-standard.zip && \
 		rm /tmp/jmeter-plugins-standard.zip
