@@ -1,0 +1,1 @@
+jmeter -n -t C:\Users\christian.danieli\Desktop\jmeterTest\RegistrazioneUtenti.jmx -JnumeroEsecuzione=B -JnumeroThread=5 -JtempoDiAttesaOrdiniMin=1000 -JtempoDiAttesaOrdiniMax=1000 -JdirectoryCsv=C:\Users\christian.danieli\Desktop\jmeterTest\registrazioneUtente.csv -JtempoDiAvvio=10 -JrunRegistrazioneUtenti=true -JrunInserisciOrdine=true
