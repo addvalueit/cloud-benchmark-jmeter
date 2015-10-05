@@ -36,4 +36,4 @@ ADD CloudBenchmark.jmx ${JMETER_HOME}/CloudBenchmark.jmx
 ADD registrazioneUtente.csv ${JMETER_HOME}/registrazioneUtente.csv
 ADD scriptJMeter.sh ${JMETER_HOME}/scriptJMeter.sh
 
-/bin/sh -c "while true; do ${JMETER_HOME}/scriptJMeter.sh; sleep 10000; done"
+CMD ["while true; do ${JMETER_HOME}/scriptJMeter.sh; sleep 10000; done"]
