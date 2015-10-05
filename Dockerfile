@@ -6,6 +6,8 @@ ENV		JMETER_VERSION	2.13
 ENV		JMETER_HOME	/opt/jmeter
 ENV		JMETER_DOWNLOAD_URL  http://mirror.serversupportforum.de/apache/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.zip
 ENV		NUMERO_ESECUZIONE  1
+ENV		SERVER_NAME  172.31.2.92
+ENV		SERVER_PORT  9100
 ENV		NUMERO_THREAD  1
 ENV		DELAY_ORDINI_MIN  1
 ENV		DELAY_ORDINI_MAX  1
@@ -29,7 +31,7 @@ RUN		mkdir -p ${JMETER_HOME} && \
 
 WORKDIR		${JMETER_HOME}
 
-ADD cloud-benchmark.jmx ${JMETER_HOME}/cloud-benchmark.jmx
+ADD CloudBenchmark.jmx ${JMETER_HOME}/CloudBenchmark.jmx
 ADD registrazioneUtente.csv ${JMETER_HOME}/registrazioneUtente.csv
 
-CMD ["bin/jmeter -n -t ${JMETER_HOME}/cloud-benchmark.jmx -JdirectoryCsv=registrazioneUtente.csv -JnumeroEsecuzione=${NUMERO_ESECUZIONE} -JnumeroThread=${NUMERO_THREAD} -JtempoDiAttesaOrdiniMin=${DELAY_ORDINI_MIN} -JtempoDiAttesaOrdiniMax=${DELAY_ORDINI_MAX} -JtempoDiAvvio=${TEMPO_AVVIO} -JrunRegistrazioneUtenti=${RUN_REGISTRAZIONE} -JrunInserisciOrdine=${RUN_ORDINI}"]
+CMD ['JVM_ARGS="-Xms512m -Xmx2g"  bin/jmeter -n -t ${JMETER_HOME}/CloudBenchmark.jmx -JdirectoryCsv=registrazioneUtente.csv -JserverName=${SERVER_NAME} -JserverPort=${SERVER_PORT} -JnumeroEsecuzione=${NUMERO_ESECUZIONE} -JnumeroThread=${NUMERO_THREAD} -JtempoDiAttesaOrdiniMin=${DELAY_ORDINI_MIN} -JtempoDiAttesaOrdiniMax=${DELAY_ORDINI_MAX} -JtempoDiAvvio=${TEMPO_AVVIO} -JrunRegistrazioneUtenti=${RUN_REGISTRAZIONE} -JrunInserisciOrdine=${RUN_ORDINI}']
