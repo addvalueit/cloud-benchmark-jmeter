@@ -34,4 +34,12 @@ WORKDIR		${JMETER_HOME}
 ADD CloudBenchmark.jmx ${JMETER_HOME}/CloudBenchmark.jmx
 ADD registrazioneUtente.csv ${JMETER_HOME}/registrazioneUtente.csv
 
-CMD ['JVM_ARGS="-Xms512m -Xmx2g"  bin/jmeter -n -t ${JMETER_HOME}/CloudBenchmark.jmx -JdirectoryCsv=registrazioneUtente.csv -JserverName=${SERVER_NAME} -JserverPort=${SERVER_PORT} -JnumeroEsecuzione=${NUMERO_ESECUZIONE} -JnumeroThread=${NUMERO_THREAD} -JtempoDiAttesaOrdiniMin=${DELAY_ORDINI_MIN} -JtempoDiAttesaOrdiniMax=${DELAY_ORDINI_MAX} -JtempoDiAvvio=${TEMPO_AVVIO} -JrunRegistrazioneUtenti=${RUN_REGISTRAZIONE} -JrunInserisciOrdine=${RUN_ORDINI}']
+# Add our crontab file
+ADD crontab.txt /config/crontab.txt
+ADD cronjob.txt /config/cronjob.txt
+
+#Use the crontab file
+RUN crontab /config/crontab.txt
+
+# Start cron
+RUN cron
