@@ -17,7 +17,7 @@ ENV		RUN_ORDINI  true
 
 # install needed debian packages & clean up
 RUN		apt-get update && \
-		apt-get install -y --no-install-recommends curl tar ca-certificates cron unzip && \
+		apt-get install -y --no-install-recommends curl tar ca-certificates unzip && \
 		apt-get clean autoclean && \
         	apt-get autoremove --yes && \
         	rm -rf /var/lib/{apt,dpkg,cache,log}/
@@ -34,13 +34,6 @@ WORKDIR		${JMETER_HOME}
 
 ADD CloudBenchmark.jmx ${JMETER_HOME}/CloudBenchmark.jmx
 ADD registrazioneUtente.csv ${JMETER_HOME}/registrazioneUtente.csv
+ADD scriptJMeter.sh ${JMETER_HOME}/scriptJMeter.sh
 
-# Add our crontab file
-ADD crontab.txt /config/crontab.txt
-ADD cronjob.txt /config/cronjob.txt
-
-#Use the crontab file
-RUN crontab /config/crontab.txt
-
-# Start cron
-RUN cron
+/bin/sh -c "while true; do ${JMETER_HOME}/scriptJMeter.sh; sleep 10000; done"
