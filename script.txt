@@ -1,0 +1,4 @@
+jmeter -n -t C:\workspace\cloud\cloud-benchmark-jmeter\CloudBenchmark.jmx -JnumeroEsecuzione=1 -JnumeroThread=5000 -JtempoDiAttesaOrdiniMin=1000 -JtempoDiAttesaOrdiniMax=1000 -JdirectoryCsv=C:\workspace\cloud\cloud-benchmark-jmeter\registrazioneUtente.csv -JtempoDiAvvio=40 -JrunRegistrazioneUtenti=true -JrunInserisciOrdine=true
+
+
+JVM_ARGS="-Xms512m -Xmx2g" sh /home/addvalue/apache-jmeter-2.13/bin/jmeter.sh -n -t /home/addvalue/jmeterTestFile/CloudBenchmark.jmx -JserverName=172.31.2.92 -JserverPort=9100 -JnumeroEsecuzione=6 -JnumeroThread=50 -JtempoDiAttesaOrdiniMin=1000 -JtempoDiAttesaOrdiniMax=3000 -JdirectoryCsv=/home/addvalue/jmeterTestFile/registrazioneUtente.csv -JtempoDiAvvio=20 -JrunRegistrazioneUtenti=true -JrunInserisciOrdine=true
