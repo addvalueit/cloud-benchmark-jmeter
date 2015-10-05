@@ -17,7 +17,7 @@ ENV		RUN_ORDINI  true
 
 # install needed debian packages & clean up
 RUN		apt-get update && \
-		apt-get install -y --no-install-recommends curl tar ca-certificates unzip && \
+		apt-get install -y --no-install-recommends curl tar ca-certificates cron unzip && \
 		apt-get clean autoclean && \
         	apt-get autoremove --yes && \
         	rm -rf /var/lib/{apt,dpkg,cache,log}/
@@ -29,7 +29,6 @@ RUN		mkdir -p ${JMETER_HOME} && \
 		unzip -o -d /opt/jmeter/ /tmp/jmeter-plugins-standard.zip && \
 		rm /tmp/jmeter-plugins-standard.zip
 		
-RUN 	apt-get install cron nano screen
 
 WORKDIR		${JMETER_HOME}
 
