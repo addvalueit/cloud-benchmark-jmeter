@@ -167,14 +167,14 @@
                 <elementProp name="username" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.name">username</stringProp>
-                  <stringProp name="Argument.value">${user}${__P(numeroEsecuzione)}</stringProp>
+                  <stringProp name="Argument.value">${__P(numeroEsecuzione)}${user}${__P(numeroEsecuzione)}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
                 <elementProp name="password" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.name">password</stringProp>
-                  <stringProp name="Argument.value">${pass}${__P(numeroEsecuzione)}</stringProp>
+                  <stringProp name="Argument.value">${__P(numeroEsecuzione)}${pass}${__P(numeroEsecuzione)}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
@@ -373,14 +373,14 @@
                 <elementProp name="username" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.name">username</stringProp>
-                  <stringProp name="Argument.value">${user}${__P(numeroEsecuzione)}</stringProp>
+                  <stringProp name="Argument.value">${__P(numeroEsecuzione)}${user}${__P(numeroEsecuzione)}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
                 <elementProp name="password" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.name">password</stringProp>
-                  <stringProp name="Argument.value">${pass}${__P(numeroEsecuzione)}</stringProp>
+                  <stringProp name="Argument.value">${__P(numeroEsecuzione)}${pass}${__P(numeroEsecuzione)}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>

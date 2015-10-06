@@ -1,12 +1,12 @@
 #!/bin/bash
 c=${NUMERO_ESECUZIONE}
-max=$((${REPEAT} + ${NUMERO_ESECUZIONE}))
+max=$((c+REPEAT))
 while [[ $c -lt $max ]]; do
 
 	echo "running #" $c
 
 	JVM_ARGS=${JMETER_JVM_ARGS} \
-	bin/jmeter -n -t ${JMETER_HOME}/CloudBenchmark.jmx \
+	bin/jmeter -n -t CloudBenchmark.jmx \
 	-JdirectoryCsv=registrazioneUtente.csv \
 	-JserverName=${SERVER_NAME} \
 	-JserverPort=${SERVER_PORT} \
