@@ -18,4 +18,4 @@ ADD CloudBenchmark.jmx ${JMETER_HOME}/CloudBenchmark.jmx
 ADD registrazioneUtente.csv ${JMETER_HOME}/registrazioneUtente.csv
 ADD scriptJMeter.sh ${JMETER_HOME}/scriptJMeter.sh
 
-ENTRYPOINT ["${JMETER_HOME}/scriptJMeter.sh"]
+ENTRYPOINT ["./scriptJMeter.sh"]
