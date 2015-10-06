@@ -1,5 +1,6 @@
 FROM hauptmedia/jmeter
 
+ENV     JMETER_JVM_ARGS -Xms512m -Xmx2g
 ENV		JMETER_HOME	/opt/jmeter
 ENV		NUMERO_ESECUZIONE  1
 ENV		SERVER_NAME  172.31.2.92

@@ -1,11 +1,11 @@
 #!/bin/bash
-c = ${NUMERO_ESECUZIONE}
-max = $((${REPEAT} + ${NUMERO_ESECUZIONE}))
-while [[ $c -le $max ]]; do
+c=${NUMERO_ESECUZIONE}
+max=$((${REPEAT} + ${NUMERO_ESECUZIONE}))
+while [[ $c -lt $max ]]; do
 
 	echo "running #" $c
 
-	JVM_ARGS="-Xms512m -Xmx2g" \
+	JVM_ARGS=${JMETER_JVM_ARGS} \
 	bin/jmeter -n -t ${JMETER_HOME}/CloudBenchmark.jmx \
 	-JdirectoryCsv=registrazioneUtente.csv \
 	-JserverName=${SERVER_NAME} \
