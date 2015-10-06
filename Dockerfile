@@ -14,6 +14,7 @@ ENV		DELAY_ORDINI_MAX  1
 ENV		TEMPO_AVVIO  1
 ENV		RUN_REGISTRAZIONE  true
 ENV		RUN_ORDINI  true
+ENV		REPEAT  1000
 
 # install needed debian packages & clean up
 RUN		apt-get update && \
@@ -36,4 +37,4 @@ ADD CloudBenchmark.jmx ${JMETER_HOME}/CloudBenchmark.jmx
 ADD registrazioneUtente.csv ${JMETER_HOME}/registrazioneUtente.csv
 ADD scriptJMeter.sh ${JMETER_HOME}/scriptJMeter.sh
 
-CMD ["while true; do ${JMETER_HOME}/scriptJMeter.sh; sleep 10000; done"]
+ENTRYPOINT ["${JMETER_HOME}/scriptJMeter.sh"]
