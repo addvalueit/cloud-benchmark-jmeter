@@ -16,7 +16,9 @@ while [[ $c -lt $max ]]; do
 	-JtempoDiAttesaOrdiniMax=${DELAY_ORDINI_MAX} \
 	-JtempoDiAvvio=${TEMPO_AVVIO} \
 	-JrunRegistrazioneUtenti=${RUN_REGISTRAZIONE} \
-	-JrunInserisciOrdine=${RUN_ORDINI}
+	-JrunInserisciOrdine=${RUN_ORDINI} \
+	-JrunQuerySuiTuoiDatiCompleta=${QUERY_COMPLETA} \
+	-JrunQuerySuiTuoiDatiEnqueue=${QUERY_IN_CODA} 
 	
 	(( c++ ))
 done

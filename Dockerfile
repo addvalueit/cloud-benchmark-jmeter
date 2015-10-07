@@ -11,6 +11,8 @@ ENV JMETER_JVM_ARGS    "-Xms512m -Xmx2g" \
     TEMPO_AVVIO        1                 \
     RUN_REGISTRAZIONE  true              \
     RUN_ORDINI         true              \
+    QUERY_COMPLETA     false             \
+    QUERY_IN_CODA      false             \
     REPEAT             250               
 
 WORKDIR    ${JMETER_HOME}
