@@ -124,7 +124,7 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-          <stringProp name="HTTPSampler.path">/JMeterParams/${__P(numeroEsecuzione,1)}/${__P(numeroThread,1)}/${__P(delayOrdiniMin,1)}/${__P(delayOrdiniMax,1)}/${__P(tempoAvvio,1)}/${__P(runRegistrazione,1)}/${__P(runOrdini,1)}/inizio</stringProp>
+          <stringProp name="HTTPSampler.path">/JMeterParams/${__P(numeroEsecuzione,0)}/${__P(numeroThread,0)}/${__P(tempoDiAttesaOrdiniMin,0)}/${__P(tempoDiAttesaOrdiniMax,0)}/${__P(tempoDiAvvio,0)}/${__P(runRegistrazioneUtenti,0)}/${__P(runInserisciOrdine,0)}/inizio</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -850,7 +850,7 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-          <stringProp name="HTTPSampler.path">/JMeterParams/${__P(numeroEsecuzione,1)}/${__P(numeroThread,1)}/${__P(delayOrdiniMin,1)}/${__P(delayOrdiniMax,1)}/${__P(tempoAvvio,1)}/${__P(runRegistrazione,1)}/${__P(runOrdini,1)}/fine</stringProp>
+          <stringProp name="HTTPSampler.path">/JMeterParams/${__P(numeroEsecuzione,0)}/${__P(numeroThread,0)}/${__P(tempoDiAttesaOrdiniMin,0)}/${__P(tempoDiAttesaOrdiniMax,0)}/${__P(tempoDiAvvio,0)}/${__P(runRegistrazioneUtenti,0)}/${__P(runInserisciOrdine,0)}/fine</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
