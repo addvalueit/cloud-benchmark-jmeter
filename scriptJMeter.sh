@@ -10,7 +10,7 @@ while [[ $c -lt $max ]]; do
 	-JdirectoryCsv=registrazioneUtente.csv \
 	-JserverName=${SERVER_NAME} \
 	-JserverPort=${SERVER_PORT} \
-	-JnumeroEsecuzione=${NUMERO_ESECUZIONE} \
+	-JnumeroEsecuzione=$c \
 	-JnumeroThread=${NUMERO_THREAD} \
 	-JtempoDiAttesaOrdiniMin=${DELAY_ORDINI_MIN} \
 	-JtempoDiAttesaOrdiniMax=${DELAY_ORDINI_MAX} \

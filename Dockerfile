@@ -1,17 +1,17 @@
 FROM hauptmedia/jmeter
 
-ENV    JMETER_JVM_ARGS "-Xms512m -Xmx2g"
-ENV    JMETER_HOME /opt/jmeter
-ENV    NUMERO_ESECUZIONE 1
-ENV    SERVER_NAME 172.31.2.92
-ENV    SERVER_PORT 9100
-ENV    NUMERO_THREAD 500
-ENV    DELAY_ORDINI_MIN 1
-ENV    DELAY_ORDINI_MAX 1
-ENV    TEMPO_AVVIO 1
-ENV    RUN_REGISTRAZIONE true
-ENV    RUN_ORDINI true
-ENV    REPEAT 250
+ENV JMETER_JVM_ARGS    "-Xms512m -Xmx2g" \
+    JMETER_HOME        /opt/jmeter       \
+    NUMERO_ESECUZIONE  1                 \
+    SERVER_NAME        172.31.2.92       \
+    SERVER_PORT        9100              \
+    NUMERO_THREAD      500               \
+    DELAY_ORDINI_MIN   2500              \
+    DELAY_ORDINI_MAX   2500              \
+    TEMPO_AVVIO        1                 \
+    RUN_REGISTRAZIONE  true              \
+    RUN_ORDINI         true              \
+    REPEAT             250               
 
 WORKDIR    ${JMETER_HOME}
 
