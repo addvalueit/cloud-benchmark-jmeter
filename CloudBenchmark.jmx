@@ -21,8 +21,8 @@
       </RandomVariableConfig>
       <hashTree/>
       <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="numeroCarrelliDaAcquistare" enabled="true">
-        <stringProp name="maximumValue">50</stringProp>
-        <stringProp name="minimumValue">1</stringProp>
+        <stringProp name="maximumValue">10</stringProp>
+        <stringProp name="minimumValue">5</stringProp>
         <stringProp name="outputFormat"></stringProp>
         <boolProp name="perThread">true</boolProp>
         <stringProp name="randomSeed"></stringProp>
@@ -784,8 +784,8 @@
               <hashTree/>
             </hashTree>
             <PoissonRandomTimer guiclass="PoissonRandomTimerGui" testclass="PoissonRandomTimer" testname="Poisson Random Timer" enabled="true">
-              <stringProp name="ConstantTimer.delay">${__P(tempoDiAttesaOrdiniMax,3)}</stringProp>
-              <stringProp name="RandomTimer.range">${__P(tempoDiAttesaOrdiniMin,1)}</stringProp>
+              <stringProp name="ConstantTimer.delay">${__P(tempoDiAttesaOrdiniMin,3)}</stringProp>
+              <stringProp name="RandomTimer.range">${__P(tempoDiAttesaOrdiniMax,1)}</stringProp>
             </PoissonRandomTimer>
             <hashTree/>
           </hashTree>
